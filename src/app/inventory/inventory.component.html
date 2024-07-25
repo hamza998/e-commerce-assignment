@@ -1,0 +1,10 @@
+<div class="inventory">
+    <h2>Inventory</h2>
+    <div *ngFor="let item of Inventory | async" class="inventory-item">
+      <span>{{ item.name }} ({{ item.quantity }} available)</span>
+      <button (click)="purchaseItem(item.productId)" [disabled]="item.quantity <= 0">
+        Purchase
+      </button>
+    </div>
+  </div>
+  
